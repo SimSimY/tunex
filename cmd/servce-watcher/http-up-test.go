@@ -30,7 +30,7 @@ func (receiver *HttpUpTest) Update() {
 		receiver.State = err.Error()
 	} else if res.StatusCode >= 200 && res.StatusCode <= 299 {
 		receiver.Status = true
-		receiver.State = ""
+		receiver.State = res.Status
 	} else {
 		receiver.Status = false
 		receiver.State = res.Status
